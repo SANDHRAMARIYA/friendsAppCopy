@@ -5,16 +5,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddfriendsComponent } from './addfriends/addfriends.component';
+import { ViewfriendsComponent } from './viewfriends/viewfriends.component';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const appRoutes:Routes=[
+  {
+    path:"",component:AddfriendsComponent
+  },
+  {
+    path:"view",component:ViewfriendsComponent
+  }
+]
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AddfriendsComponent
+    AddfriendsComponent,
+    ViewfriendsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
